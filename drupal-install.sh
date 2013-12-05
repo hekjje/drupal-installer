@@ -38,6 +38,10 @@ commercial damages or losses. The entire risk as to the quality
 and performance of the Software is borne by you. Should the Software
 prove defective, you and not the Licensor assume the entire cost of
 any service and repair.\n"
+
+command -v drush >/dev/null 2>&1 || { echo >&2 "Drush is required, but it's not installed. Aborting."; exit 1; }
+command -v wget >/dev/null 2>&1 || { echo >&2 "wget is required, but it's not installed. Aborting."; exit 1; }
+
 echo -e $txtgre"Start installing the latest version of Drupal\n"$txtrst
 
 echo -n "Enter MySQl username: "
