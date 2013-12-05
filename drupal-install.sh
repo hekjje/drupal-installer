@@ -3,6 +3,9 @@
 # Text color variables
 txtund=$(tput sgr 0 1)          # Underline
 txtbld=$(tput bold)             # Bold
+txtred=$(tput setaf 1)          #  red
+txtgre=$(tput setaf 2)          #  green
+txtblu=$(tput setaf 4)          #  blue
 bldred=${txtbld}$(tput setaf 1) #  red
 bldblu=${txtbld}$(tput setaf 4) #  blue
 bldwht=${txtbld}$(tput setaf 7) #  white
