@@ -22,22 +22,22 @@ echo
 echo $(tput setaf 2)Start installing the latest version of Drupal
 echo 
 echo $(tput sgr0)
-echo -e "Enter MySQl username:"
+echo -n "Enter MySQl username: "
 read mysqlusernmae
 
-echo -e "Enter MySQl password:"
+echo -n "Enter MySQl password: "
 read mysqlpassword
 
-echo -e "Enter MySQl host:"
+echo -n "Enter MySQl host: "
 read mysqlhost
 
-echo -e "Enter MySQl database:"
+echo -n "Enter MySQl database: "
 read mysqldatabase
 
-echo -e "Enter a username for Drupal admin:"
+echo -n "Enter a username for Drupal admin: "
 read drupaladminusernmae
 
-echo -e "Enter a password for Drupal admin:"
+echo -n "Enter a password for Drupal admin: "
 read drupaladminpassword
 echo
 echo $(tput setaf 2)Downloading the latest version of drupal
