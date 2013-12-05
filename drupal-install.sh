@@ -15,16 +15,31 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-echo $(tput bold)$(tput setaf 4)
-echo "*************************************************"
-echo "*                                               *"
-echo "*          Drupal installation script           *"
-echo "*                                               *"
-echo "*************************************************"
-echo 
-echo $(tput setaf 2)Start installing the latest version of Drupal
-echo 
-echo $(tput sgr0)
+echo $bldblu
+echo "*******************************************************************"
+echo "*                                                                 *"
+echo "*                     Drupal installation script                  *"
+echo "*                                                                 *"
+echo "*******************************************************************"
+echo $txtrst
+echo -e $txtred"DISCLAIMER OF WARRANTY\n
+The Software is provided \"AS IS\" and \"WITH ALL FAULTS,\"
+without warranty of any kind, including without limitation
+the warranties of merchantability, fitness for a particular
+purpose and non-infringement. The Licensor makes no warranty
+that the Software is free of defects or is suitable for any
+particular purpose. In no event shall the Licensor be responsible
+for loss or damages arising from the installation or use of the
+Software, including but not limited to any indirect, punitive,
+special, incidental or consequential damages of any character
+including, without limitation, damages for loss of goodwill, work
+stoppage, computer failure or malfunction, or any and all other
+commercial damages or losses. The entire risk as to the quality
+and performance of the Software is borne by you. Should the Software
+prove defective, you and not the Licensor assume the entire cost of
+any service and repair.\n"
+echo -e $txtgre"Start installing the latest version of Drupal\n"$txtrst
+
 echo -n "Enter MySQl username: "
 read mysqlusernmae
 
