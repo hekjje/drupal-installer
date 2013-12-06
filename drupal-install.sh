@@ -5,6 +5,7 @@ txtund=$(tput sgr 0 1)          # Underline
 txtbld=$(tput bold)             # Bold
 txtred=$(tput setaf 1)          #  red
 txtgre=$(tput setaf 2)          #  green
+txtyel=$(tput setaf 3)          #  yellow
 txtblu=$(tput setaf 4)          #  blue
 bldred=${txtbld}$(tput setaf 1) #  red
 bldblu=${txtbld}$(tput setaf 4) #  blue
@@ -65,6 +66,31 @@ read drupaladminpassword
 echo -n "Enter a email for Drupal admin: "
 read drupaladminmail
 
+echo "Select Drupal theme to install"
+PS3='Please enter your choice: '
+options=("Bootstrap $txtyel(https://drupal.org/project/bootstrap)$txtrst" "Zurb Foundation $txtyel(https://drupal.org/project/zurb-foundation)$txtrst" "Omega $txtyel(https://drupal.org/project/omega)$txtrst")
+select opt in "${options[@]}"
+do
+    case "$REPLY" in
+        1 )
+            drupaltheme=bootstrap
+            drupalthemedefault=bootstrap
+            break
+            ;;
+        2 )
+            drupaltheme=zurb-foundation
+            drupalthemedefault=zurb_foundation
+            break
+            ;;
+        3 )
+            drupaltheme=omega
+            drupalthemedefault=omega
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done
+
 read -p "Start installation? [Y/N] " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -114,10 +140,10 @@ then
   drush variable-set --format="string" jquery_update_compression_type "min"
   drush cc all
 
-  echo -e $txtgre"\nInstall Bootstrap theme\n"$txtrst
-  drush dl bootstrap
-  drush pm-enable bootstrap -y
-  drush variable-set theme_default "bootstrap"
+  echo -e $txtgre"\nInstall $drupaltheme theme\n"$txtrst
+  drush dl $drupaltheme
+  drush pm-enable $drupaltheme -y
+  drush variable-set theme_default "$drupalthemedefault"
 
   echo -e $txtgre"\nDisable unused themes\n"$txtrst
   drush pm-disable bartik -y
