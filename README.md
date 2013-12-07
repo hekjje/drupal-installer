@@ -16,4 +16,4 @@ The script creates a folder named "drupal" where Drupal will be installed in.
   - Check for wget        - DONE
   - Add Omega theme       - DONE
   - Add Foundation theme  - DONE
-  -If omega theme give option for running drush sub theme command
+  - If omega theme give option for running drush sub theme command
