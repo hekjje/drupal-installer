@@ -1,7 +1,7 @@
 drupal-installer!
 ================
 
-A simple bash script to install drupal
+## A simple bash script to install drupal
 
 ### How to use
 
